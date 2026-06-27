@@ -1,0 +1,216 @@
+
+<div class="dialog-header p-2">
+
+  <h2 class="dialog-title">
+    {{ isEditMode ? 'Edit Course' : 'Add Course' }}
+  </h2>
+
+  <button
+    mat-icon-button
+    
+    class="close-btn"
+    (click)="close()">
+
+    <mat-icon>close</mat-icon>
+
+  </button>
+
+</div>
+
+<mat-divider></mat-divider>
+<mat-card>
+
+    <mat-card-content>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="form-row">
+                <!-- course name fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Course Name</mat-label>
+
+                    <input matInput formControlName="courseName">
+
+                    @if (
+                    form.controls['courseName'].touched &&
+                    form.controls['courseName'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Course name is required
+                    </mat-error>
+                    }
+
+                    @if (
+                    form.controls['courseName'].touched &&
+                    form.controls['courseName'].hasError('minlength')
+                    ) {
+                    <mat-error>
+                        Course name Minimum 3 characters
+                    </mat-error>
+                    }
+
+                </mat-form-field>
+                <!-- instructor name fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Instructor Name</mat-label>
+
+                    <input matInput formControlName="instructorName">
+
+                    @if (
+                    form.controls['instructorName'].touched &&
+                    form.controls['instructorName'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Instructor name is required
+                    </mat-error>
+                    }
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <!-- category fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+
+                    <mat-select formControlName="category">
+                        @for( category of categories; track category.id) {
+                        <mat-option [value]="category.id">
+                            {{category.name}}
+                        </mat-option>
+                        }
+
+
+                    </mat-select>
+                    @if (
+                    form.controls['category'].touched &&
+                    form.controls['category'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Category is required
+                    </mat-error>
+                    }
+                </mat-form-field>
+
+                <!-- status fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+
+                    <mat-select formControlName="status">
+
+                        @for (option of statusOptions; track $index; let i = $index) {
+                        <mat-option [value]="option">
+                            {{option}}
+                        </mat-option>
+                        }
+
+
+
+                    </mat-select>
+                    @if (
+                    form.controls['status'].touched &&
+                    form.controls['status'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Status is required
+                    </mat-error>
+                    }
+
+                </mat-form-field>
+
+            </div>
+
+            <div class="form-row">
+
+                <!-- duration fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Duration (Hours)</mat-label>
+
+                    <input type="number" min="1" matInput formControlName="duration">
+
+                    @if (
+                    form.controls['duration'].touched &&
+                    form.controls['duration'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Duration is required
+                    </mat-error>
+                    }
+
+                    @if (
+                    form.controls['duration'].touched &&
+                    form.controls['duration'].hasError('min')
+                    ) {
+                    <mat-error>
+                        Duration must be greater than 0
+                    </mat-error>
+                    }
+
+                </mat-form-field>
+                <!-- price fields -->
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+
+                    <input type="number" min="0" matInput formControlName="price">
+
+                    @if (
+                    form.controls['price'].touched &&
+                    form.controls['price'].hasError('required')
+                    ) {
+                    <mat-error>
+                        Price is required
+                    </mat-error>
+                    }
+
+                    @if (
+                    form.controls['price'].touched &&
+                    form.controls['price'].hasError('min')
+                    ) {
+                    <mat-error>
+                        Price cannot be negative
+                    </mat-error>
+                    }
+
+                </mat-form-field>
+
+            </div>
+            <!-- description fields -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Description</mat-label>
+
+                <textarea matInput rows="4" formControlName="description">
+                 </textarea>
+
+                <mat-hint align="end">
+                    {{ form.controls['description'].value?.length || 0 }}/500
+                </mat-hint>
+
+                @if (
+                form.controls['description'].touched &&
+                form.controls['description'].hasError('maxlength')
+                ) {
+                <mat-error>
+                    Maximum 500 characters allowed
+                </mat-error>
+                }
+
+            </mat-form-field>
+            <div class="button-row">
+
+
+                <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">
+
+                {{isEditMode?'Edit':'Save'}}    
+
+                </button>
+                <button mat-raised-button color="warn" type="button" (click)="cancel()">
+
+                    Cancel
+
+                </button>
+            </div>
+
+        </form>
+
+    </mat-card-content>
+
+</mat-card>

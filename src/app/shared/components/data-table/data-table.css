@@ -1,0 +1,57 @@
+.table-container {
+  background: white;
+  border-radius: 16px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-header-row {
+  background: #2563eb;
+}
+
+.mat-mdc-header-cell {
+  color: white;
+  font-weight: 600;
+}
+
+.mat-mdc-row:hover {
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+
+  table {
+    border: 0;
+  }
+
+  .mat-mdc-header-row {
+    display: none;
+  }
+
+  .mat-mdc-row {
+    display: block;
+    /* border: 1px solid #ddd;
+    border-radius: 12px; */
+    margin-bottom: 26px;
+    padding: 12px;
+  }
+
+  .mat-mdc-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 10px 0;
+    text-align: right;
+  }
+
+  .mat-mdc-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    text-align: left;
+    margin-right: 16px;
+  }
+}

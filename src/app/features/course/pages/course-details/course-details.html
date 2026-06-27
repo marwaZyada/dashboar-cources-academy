@@ -1,0 +1,71 @@
+
+
+@if(course() ;as course) {
+
+<div class="dialog-header">
+
+  <h2>Course Details</h2>
+
+</div>
+
+
+
+<mat-card>
+
+  <mat-card-content>
+
+    <div class="detail-row">
+      <strong>Course Name:</strong>
+      <span>{{ course.courseName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Instructor:</strong>
+      <span>{{ course.instructorName }}</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Category:</strong>
+      <span>{{ course.category }}</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Duration:</strong>
+      <span>{{ course.duration }} Hours</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Price:</strong>
+      <span>{{ course.price }} EGP</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Status:</strong>
+      <span>{{ course.status }}</span>
+    </div> 
+
+    <div class="detail-row">
+      <strong>Created Date:</strong>
+      <span>{{ course.createdDate  }}</span>
+    </div>
+
+    <div class="detail-row">
+      <strong>Description:</strong>
+      <p>{{ course.description || 'No Description' }}</p>
+    </div>
+
+  </mat-card-content>
+  <div class="my-5">
+  <a class="btn btn-primary d-block w-75 mx-auto"
+              [routerLink]="fromCourseList()?'/courses':'/.'">
+             
+
+             Back
+
+            </a>
+  </div>
+  
+
+</mat-card>
+
+}

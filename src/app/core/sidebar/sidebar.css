@@ -1,0 +1,119 @@
+.sidebar{
+
+width:250px;
+height:100%;
+
+background:#111827;
+
+color:white;
+
+transition:.3s;
+
+display:flex;
+
+flex-direction:column;
+
+padding:20px;
+
+
+}
+
+.closed{
+
+width:80px;
+
+}
+
+.sidebar.closed .project-name {
+  font-size: 12px;
+}
+
+.sidebar.closed .menu-item {
+  padding: 11px;
+}
+
+.sidebar.closed .title {
+  display: none;
+}
+
+
+
+.logo{
+
+font-size:24px;
+
+font-weight:bold;
+
+margin-bottom:40px;
+
+}
+
+a{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px;
+
+border-radius:12px;
+
+color:white;
+
+text-decoration:none;
+
+margin-bottom:10px;
+
+}
+
+a:hover{
+
+background:#374151;
+
+}
+
+.active{
+
+background:#4f46e5;
+
+}
+
+mat-icon{
+
+min-width:24px;
+
+}
+
+@media(max-width:768px){
+.sidebar{
+overflow:hidden;
+top:0;
+width:80px;
+transition:.3s;
+z-index:1000;
+
+}
+
+
+.sidebar.closed{
+   display:none;
+}
+   
+
+
+.sidebar.open .project-name{
+   font-size: 12px;
+}
+
+.sidebar.open .menu-item{
+    padding: 11px;
+}
+.sidebar.open .title{
+    display: none;
+}
+
+
+
+}

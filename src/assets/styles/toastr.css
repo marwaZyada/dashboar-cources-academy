@@ -1,0 +1,47 @@
+/* ===== Toast Position ===== */
+
+#toast-container.toast-top-right {
+  top: 16px;
+  right: 16px;
+}
+
+/* ===== Common ===== */
+
+.custom-toast {
+  color: #fff !important;
+  background-image: none !important;
+  padding-left: 16px !important;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ===== Success ===== */
+
+.custom-success-toast {
+  background-color: #2e7d32 !important;
+}
+
+/* ===== Error ===== */
+
+.custom-error-toast {
+  background-color: #d32f2f !important;
+}
+
+/* ===== Warning ===== */
+
+.custom-warning-toast {
+  background-color: #ed6c02 !important;
+}
+
+/* ===== Info ===== */
+
+.custom-info-toast {
+  background-color: #0288d1 !important;
+}
+
+/* ===== Text ===== */
+
+.custom-toast .toast-title,
+.custom-toast .toast-message {
+  color: white !important;
+}

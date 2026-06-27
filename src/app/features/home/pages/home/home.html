@@ -1,0 +1,159 @@
+<div class="container py-5">
+
+  <!-- Hero Section -->
+
+  <section class="hero text-center mb-5">
+
+    <h1 class="display-4 fw-bold">
+      Learn New Skills 🚀
+    </h1>
+
+    <p class="lead text-muted">
+      Discover the best online courses and improve your career.
+    </p>
+
+    <a
+      routerLink="/courses"
+      class="btn btn-primary btn-lg">
+
+      Browse Courses
+
+    </a>
+
+  </section>
+
+  <!-- Search -->
+
+  <div class="row justify-content-center mb-5">
+
+    <div class="col-md-6">
+
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Search courses..." />
+
+    </div>
+
+  </div>
+
+  <!-- Statistics -->
+
+  <div class="row text-center mb-5">
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+          <h3>50+</h3>
+
+          <p class="text-muted">
+            Courses
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+          <h3>20+</h3>
+
+          <p class="text-muted">
+            Instructors
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <div class="card shadow-sm border-0">
+
+        <div class="card-body">
+
+          <h3>1000+</h3>
+
+          <p class="text-muted">
+            Students
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Featured Courses -->
+
+  <h2 class="mb-4 fw-bold">
+    Featured Courses
+  </h2>
+
+  <div class="row g-4">
+@for(course of courses;track course) {
+    <div
+      class="col-lg-4 col-md-6">
+      
+
+      <div class="card h-100 shadow-sm">
+
+        <img
+          [src]="course.imageUrl"
+          class="card-img-top"
+          alt="course image">
+
+        <div class="card-body">
+
+          <h5 class="card-title">
+            {{course.title}}
+          </h5>
+
+          <p class="card-text text-muted">
+
+            {{course.description | slice:0:80}}...
+
+          </p>
+
+          <div
+            class="d-flex justify-content-between align-items-center">
+
+            <span class="fw-bold text-primary">
+
+              ${{course.price}}
+
+            </span>
+
+            <a
+              [routerLink]="['/courses', course.id]"
+              class="btn btn-outline-primary">
+
+              Details
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  }
+  </div>
+
+
+</div>

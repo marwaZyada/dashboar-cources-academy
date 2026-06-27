@@ -1,0 +1,39 @@
+.search-field {
+  width: 100%;
+}
+
+::ng-deep .search-field .mat-mdc-text-field-wrapper {
+   background-color: white !important;
+ height: 56px !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+   border: 1px solid #e5e7eb !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+::ng-deep .search-field .mdc-notched-outline {
+  border-radius: 12px !important;
+}
+
+::ng-deep .search-field .mdc-notched-outline__leading {
+  border-radius: 12px 0 0 12px !important;
+  width: 20px !important;
+}
+
+::ng-deep .search-field .mdc-notched-outline__trailing {
+  border-radius: 0 12px 12px 0 !important;
+}
+
+::ng-deep .search-field .mat-mdc-form-field-infix {
+  /* padding-top: 16px !important; */
+}
+::ng-deep .search-field input::placeholder {
+  padding-top: 16px !important;
+  /* height: 48px!important; */
+  /* line-height: 48px!important; */
+  color: #474749 !important;
+}
+
+mat-icon {
+  color: #2563eb;
+}

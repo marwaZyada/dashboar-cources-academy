@@ -1,0 +1,40 @@
+<app-page-header
+  [title]="'Courses Management'"
+  [subtitle]="'Manage all courses'"
+  (addClicked)="addCourse()"
+  [name]="'Course'">
+</app-page-header>
+<div class="row justify-content-center mb-3 align-items-center flex-wrap">
+  <div class="col-md-6 col-sm-12 mb-2">
+<app-search-input
+  [label]="'Search Course'"
+  [placeholder]="'Search by name'"
+  (search)="applyFilter($event)">
+</app-search-input>
+  </div>
+  <div class="col-md-6 col-sm-12 mb-2">
+<app-search-dropdownlist
+  [label]="'Filter by status'"
+  [placeholder]="'All status'"
+  [options]="statusOptions"
+  (selectedChange)="applystatusFilter($event)">
+</app-search-dropdownlist>
+</div>
+</div>  
+
+@if(courses()){
+<app-data-table
+  [displayedColumns]="displayedColumns"
+  [data]="courses()"
+  (edit)="editCourse($event)"
+  (delete)="deleteCourse($event)"
+  (view)="viewCourse($event)">
+ >
+</app-data-table>
+}
+@else{
+  <app-empty-state
+    [title]="'No Courses Found'"
+    [message]="'There are no courses available yet'">
+  </app-empty-state>
+}

@@ -1,0 +1,18 @@
+<mat-form-field
+  appearance="outline"
+  class="search-field">
+
+  <!-- <mat-label>
+  {{label()}}
+  </mat-label> -->
+
+  <input class="p-2"
+    matInput
+    (change)="search.emit($event.target.value)"
+    [placeholder]=placeholder()>
+
+  <mat-icon matSuffix>
+    search
+  </mat-icon>
+
+</mat-form-field>

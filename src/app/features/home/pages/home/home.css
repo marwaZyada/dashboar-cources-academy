@@ -1,0 +1,27 @@
+.hero {
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #6366f1
+  );
+  color: white;
+  border-radius: 20px;
+}
+
+.hero .lead {
+  color: rgba(255,255,255,.9) !important;
+}
+
+.card {
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}

@@ -1,0 +1,68 @@
+@if(!isMobile) {
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort> @for(column of displayedColumns(); track column){ <ng-container
+      [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+      <td mat-cell *matCellDef="let row" [attr.data-label]="column"> {{row[column]}} </td>
+    </ng-container> } <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let row" data-label="Actions"> <button mat-icon-button color="primary"
+          (click)="edit.emit(row.id)"> <mat-icon>edit</mat-icon> </button> <button mat-icon-button color="warn"
+          (click)="delete.emit(row.id)"> <mat-icon>delete</mat-icon> </button> <button mat-icon-button color="primary"
+          (click)="view.emit(row.id)"> <mat-icon>visibility</mat-icon> </button> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="[...displayedColumns(),'actions']"> </tr>
+    <tr mat-row *matRowDef="let row; columns:[...displayedColumns(),'actions']"> </tr>
+  </table> 
+  <!-- <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,20]" showFirstLastButtons> </mat-paginator> -->
+</div>
+}
+@else if(isMobile) {
+  
+ @for (course of pagedCourses; track course.id) {
+
+    <mat-card class="mobile-card p-2 mb-2">
+
+      <p><strong>ID:</strong> {{course.id}}</p>
+
+      <p><strong>Course Name:</strong> {{course.courseName}}</p>
+
+      <p><strong>Instructor:</strong> {{course.instructorName}}</p>
+
+      <p><strong>Category:</strong> {{course.category}}</p>
+
+      <p><strong>Price:</strong> {{course.price}}</p>
+
+      <div class="actions">
+        <button
+          mat-icon-button
+          color="primary"
+          (click)="edit.emit(course.id)">
+
+          <mat-icon>edit</mat-icon>
+
+        </button>
+
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="delete.emit(course.id)">
+
+          <mat-icon>delete</mat-icon>
+
+        </button>
+<button
+  mat-icon-button
+  color="primary"
+  (click)="view.emit(course.id)">
+  <mat-icon>visibility</mat-icon>
+</button>
+      </div>
+
+    </mat-card>
+
+  }
+} 
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,20]" showFirstLastButtons> </mat-paginator>
+
+

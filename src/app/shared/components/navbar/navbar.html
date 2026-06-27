@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" routerLink="/">
+      Courses Academy
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbarContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/courses"
+            routerLinkActive="active">
+            Courses
+          </a>
+        </li>
+
+      
+
+      </ul>
+
+      <div class="d-flex align-items-center gap-2">
+
+        <!-- Language -->
+
+        <button
+          class="btn btn-outline-light"
+          (click)="changeLanguage()">
+
+          {{ currentLang === 'en' ? 'AR' : 'EN' }}
+
+        </button>
+
+        <!-- Login -->
+@if(!isLoggedIn){
+        <a
+         
+          routerLink="/login"
+          class="btn btn-light">
+
+          Login
+
+        </a>
+    }
+
+        <!-- Logout -->
+@if (isLoggedIn) {
+        <button
+          
+          class="btn btn-danger"
+          (click)="logout()">
+
+          Logout
+
+        </button>
+    }
+      </div>
+
+    </div>
+
+  </div>
+</nav>

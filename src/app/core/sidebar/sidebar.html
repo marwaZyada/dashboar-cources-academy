@@ -1,0 +1,29 @@
+<div
+class="sidebar"
+[class.closed]="!opened" [class.open]="opened">
+
+<div class="logo">
+
+🎓 <span class="project-name">Academy</span>
+
+</div>
+
+@for(item of menu; track item.title){
+
+<a class="menu-item"
+[routerLink]="item.link"
+routerLinkActive="active">
+
+<mat-icon>{{item.icon}}</mat-icon>
+
+@if(opened){
+
+<span class="title">{{item.title}}</span>
+
+}
+
+</a>
+
+}
+
+</div>
