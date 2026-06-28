@@ -1,54 +1,46 @@
 <header>
 
-<button
-class="menu-btn"
-(click)="menuClick.emit()">
+  <button class="menu-btn" (click)="menuClick.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-<mat-icon class="menu-icon">
+  <div class="right">
 
-menu
+    <!-- Language -->
+    <button mat-button [matMenuTriggerFor]="langMenu">
+      <mat-icon>language</mat-icon>
+      English
+    </button>
 
-</mat-icon>
+    <mat-menu #langMenu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('en')">
+        English
+      </button>
 
-</button>
+      <button mat-menu-item (click)="changeLanguage('ar')">
+        العربية
+      </button>
+    </mat-menu>
 
-<!-- <div class="search">
+    @if (!authService.isLoggedIn()) {
 
-<mat-icon>
+      <button mat-button routerLink="/login">
+        Login
+      </button>
 
-search
+      <button mat-raised-button color="primary" routerLink="/register">
+        Register
+      </button>
 
-</mat-icon>
+    } @else {
 
-<input placeholder="Search...">
+      <button mat-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
 
-</div> -->
+    }
 
-<div class="right">
-
-<button>
-
-<mat-icon>
-
-notifications
-
-</mat-icon>
-
-</button>
-
-<button>
-
-<mat-icon>
-
-mail
-
-</mat-icon>
-
-</button>
-
-<img
-src="https://i.pravatar.cc/100">
-
-</div>
+  </div>
 
 </header>

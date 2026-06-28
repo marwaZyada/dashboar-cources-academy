@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { StateCard } from '@shared/components/state-card/state-card';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatIconModule,MatCardModule,StateCard,CommonModule],
+  imports: [MatIconModule,MatCardModule,StateCard,CommonModule,MatButtonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
