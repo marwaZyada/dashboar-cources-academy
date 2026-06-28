@@ -1,0 +1,68 @@
+<div class="auth-container">
+
+  <div class="left-side">
+    <img
+      src="assets/images/login.svg"
+      alt="login">
+
+    <h2>Welcome Back!</h2>
+
+    <p>
+      Login to continue managing your courses.
+    </p>
+  </div>
+
+  <div class="right-side">
+
+    <mat-card>
+
+      <h2>Login</h2>
+
+      <form [formGroup]="loginForm">
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Email</mat-label>
+
+          <input
+            matInput
+            formControlName="email">
+
+          <mat-icon matSuffix>email</mat-icon>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+
+          <mat-label>Password</mat-label>
+
+          <input
+            matInput
+            type="password"
+            formControlName="password">
+
+          <mat-icon matSuffix>lock</mat-icon>
+
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          class="login-btn">
+
+          Login
+
+        </button>
+
+      </form>
+
+      <p>
+        Don't have an account?
+        <a routerLink="/register">Register</a>
+      </p>
+
+    </mat-card>
+
+  </div>
+
+</div>

@@ -1,0 +1,106 @@
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.left-side {
+  flex: 1;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.left-content {
+  max-width: 450px;
+  text-align: center;
+}
+
+.left-content img {
+  width: 320px;
+  margin-bottom: 30px;
+}
+
+.left-content h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.left-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 35px;
+  border-radius: 18px;
+}
+
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+button {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    padding: 20px;
+  }
+
+  .register-card {
+    max-width: 100%;
+    padding: 25px;
+  }
+}

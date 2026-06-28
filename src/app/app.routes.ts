@@ -4,10 +4,19 @@ import { Dashboard } from '@features/dashboard/dashboard';
 import { Home } from '@features/home/pages/home/home';
 
 export const routes: Routes = [
-//  {
-//     path: 'login',
-//     component: LoginComponent
-//   },
+ {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/Authentication/pages/login/login')
+      .then(c => c.Login)
+  },
+
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./features/Authentication/pages/register/register')
+      .then(c => c.Register)
+  },
 
   {
     path: '',

@@ -57,7 +57,23 @@ export class InMemoryDataService implements InMemoryDbService{
       name: 'Design'
     }
   ];
-    return { courses, categories };
+  const users=[
+  {
+    "id": "1",
+    "name": "Admin",
+    "email": "admin@gmail.com",
+    "password": "123456",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "name": "Ali",
+    "email": "ali@gmail.com",
+    "password": "123456",
+    "role": "student"
+  }
+];
+    return { courses, categories ,users};
   }
 
   genId(courses: any[]): number {
