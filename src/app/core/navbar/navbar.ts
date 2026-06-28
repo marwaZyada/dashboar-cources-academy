@@ -1,13 +1,13 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth/auth.service';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatIconModule,MatMenuModule,MatButtonModule],
+  imports: [MatIconModule,MatMenuModule,MatButtonModule,RouterLink],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
