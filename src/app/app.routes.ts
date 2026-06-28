@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Layout } from '@core/layout/layout';
 import { Dashboard } from '@features/dashboard/dashboard';
-import { Home } from '@features/home/pages/home/home';
+import { authGuard } from '@core/guards/auth-guard';
 
 export const routes: Routes = [
  {
@@ -21,6 +21,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Layout,
+    canActivate: [authGuard],
     children: [
 
       {
@@ -36,15 +37,16 @@ export const routes: Routes = [
 
   {
     path: 'courses',
+   
     loadChildren: () =>
       import('./features/course/courses.routes')
         .then(r => r.COURSES_ROUTES)
   },
 
-  {
-    path: '**',
-    redirectTo: ''
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: ''
+  // }
 ]
 }
 ];

@@ -46,7 +46,7 @@ login(email: string, password: string) {
 }
 
   logout() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 
