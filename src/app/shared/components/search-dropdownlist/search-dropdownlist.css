@@ -21,3 +21,6 @@
   align-items: center;
   height: 100%;
 }
+::ng-deep .filter-field .mat-mdc-select-arrow svg {
+fill:rgb(37, 99, 235);
+}
