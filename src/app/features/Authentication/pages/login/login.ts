@@ -28,6 +28,7 @@ private fb=inject(FormBuilder);
   login() {
 
   const { email, password } = this.loginForm.value;
+  console.log(email, password,"login form values");
 
   this.authService
       .login(email!, password!)

@@ -2,7 +2,7 @@
 
   <div class="left-side">
     <img
-      src="assets/images/login.svg"
+      src="../../../../../assets/images/welcome.png"
       alt="login">
 
     <h2>Welcome Back!</h2>
@@ -18,7 +18,7 @@
 
       <h2>Login</h2>
 
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
 
         <mat-form-field appearance="outline">
 

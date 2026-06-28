@@ -2,7 +2,7 @@
 
   <div class="left-side">
     <div class="left-content">
-      <img src="assets/images/register.svg" alt="Register">
+      <img src="../../../../../assets/images/welcome.svg" alt="Register">
       <h1>Join Our Academy</h1>
       <p>Create your account and start learning today.</p>
     </div>
@@ -16,7 +16,7 @@
       <!-- Form Here -->
 
      
-<form [formGroup]="registerForm">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
 
     <mat-form-field appearance="outline">
         <mat-label>Full Name</mat-label>

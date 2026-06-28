@@ -10,32 +10,24 @@ export class AuthService {
  private userService = inject(UserService);
  private router = inject(Router);
 
-  login(email: string, password: string) {
+login(email: string, password: string) {
+  return this.userService.getUsers().pipe(
+    map(res => {
+      const user = res.data.find(
+        u => u.email === email && u.password === password
+      );
 
-    return this.userService.getUsers().pipe(
+      console.log(user);
 
-      map(users => {
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        return true;
+      }
 
-        const user = users.find(
-          u =>
-            u.email === email &&
-            u.password === password
-        );
-
-        if (user) {
-          localStorage.setItem(
-            'currentUser',
-            JSON.stringify(user)
-          );
-          return true;
-        }
-
-        return false;
-      })
-
-    );
-
-  }
+      return false;
+    })
+  );
+}
 
  
 
